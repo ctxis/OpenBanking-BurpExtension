@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.bitbucket.b_c', name: 'jose4j', version: '0.7.0'
+    implementation group: 'net.portswigger.burp.extender', name: 'burp-extender-api', version:'2.1'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
+
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+}
+
+mainClassName = "java.burp.BurpExtender"
+
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
