@@ -41,7 +41,8 @@ Import the java library from the project sub folder `build/libs` into Burp Suite
 
 ## Demo
 
-<video src="img/open-banking-burp-extension-demo.mp4"></video>
+![Open Banking Burp Extension Demo](img/open-banking-burp-extension-demo.mp4)
+
 The demo was created with an ASPSP and TPP stub. The stubbed web server has been included within the project resources in "src/main/test/resources/OpenBanking-Test-Server.py" and the example configuration has also been included in the same folder - "open-banking-example-burp-config.json". 
 
 
